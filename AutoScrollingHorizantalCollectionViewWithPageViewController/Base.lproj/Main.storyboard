@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="c1A-ay-Hyg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Auto Scrolling View Controller-->
+        <scene sceneID="VGP-UE-hCL">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="c1A-ay-Hyg" customClass="AutoScrollingViewController" customModule="AutoScrollingHorizantalCollectionViewWithPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WV1-nW-cAw"/>
+                        <viewControllerLayoutGuide type="bottom" id="SIt-T7-cN0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kVX-31-kbe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lo7-Vw-xgr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="DJP-bC-Cpy"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="CZF-96-iV8">
+                                    <size key="itemSize" width="375" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCVC" id="d4l-9p-vmn" customClass="ImageCVC" customModule="AutoScrollingHorizantalCollectionViewWithPageViewController" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUN-no-n8y">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IndianFlag" translatesAutoresizingMaskIntoConstraints="NO" id="NXY-Qt-Gp9">
+                                                            <rect key="frame" x="2" y="2" width="371" height="124"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="NXY-Qt-Gp9" secondAttribute="bottom" constant="2" id="DE0-0O-88v"/>
+                                                        <constraint firstItem="NXY-Qt-Gp9" firstAttribute="leading" secondItem="uUN-no-n8y" secondAttribute="leading" constant="2" id="Xuh-aD-e6b"/>
+                                                        <constraint firstItem="NXY-Qt-Gp9" firstAttribute="top" secondItem="uUN-no-n8y" secondAttribute="top" constant="2" id="iRE-S1-xSy"/>
+                                                        <constraint firstAttribute="trailing" secondItem="NXY-Qt-Gp9" secondAttribute="trailing" constant="2" id="k2i-fs-ezR"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="uUN-no-n8y" firstAttribute="top" secondItem="d4l-9p-vmn" secondAttribute="top" id="6a1-3n-PCv"/>
+                                            <constraint firstAttribute="trailing" secondItem="uUN-no-n8y" secondAttribute="trailing" id="7XV-Wh-Dp3"/>
+                                            <constraint firstItem="uUN-no-n8y" firstAttribute="leading" secondItem="d4l-9p-vmn" secondAttribute="leading" id="D5b-ec-eb4"/>
+                                            <constraint firstAttribute="bottom" secondItem="uUN-no-n8y" secondAttribute="bottom" id="wTF-Lf-GmB"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="modelView" destination="uUN-no-n8y" id="4ao-rc-EIP"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="10" translatesAutoresizingMaskIntoConstraints="NO" id="9BT-61-zbJ">
+                                <rect key="frame" x="0.0" y="153" width="375" height="5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="188-sd-Fge"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9BT-61-zbJ" firstAttribute="leading" secondItem="kVX-31-kbe" secondAttribute="leading" id="3WE-0d-EYH"/>
+                            <constraint firstItem="lo7-Vw-xgr" firstAttribute="top" secondItem="WV1-nW-cAw" secondAttribute="bottom" id="Kkb-vi-4Bg"/>
+                            <constraint firstAttribute="trailing" secondItem="lo7-Vw-xgr" secondAttribute="trailing" id="Qc8-AC-k00"/>
+                            <constraint firstAttribute="trailing" secondItem="9BT-61-zbJ" secondAttribute="trailing" id="S5L-9T-wCB"/>
+                            <constraint firstItem="lo7-Vw-xgr" firstAttribute="leading" secondItem="kVX-31-kbe" secondAttribute="leading" id="bpa-Ij-JsJ"/>
+                            <constraint firstItem="9BT-61-zbJ" firstAttribute="top" secondItem="lo7-Vw-xgr" secondAttribute="bottom" constant="5" id="dwz-Iu-cft"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageCV" destination="lo7-Vw-xgr" id="h96-Bo-f2F"/>
+                        <outlet property="scrollPageControll" destination="9BT-61-zbJ" id="G26-7F-6q1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cTw-h0-fBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11157.6" y="-370.16491754122939"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="IndianFlag" width="105" height="70"/>
+    </resources>
+</document>
